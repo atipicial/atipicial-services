@@ -1,0 +1,843 @@
+# Change Log - @atipicial/bs-atipicial
+
+This log was last generated on Fri, 10 Jul 2026 20:46:50 GMT and should not be manually modified.
+
+## 3.1.19
+Fri, 10 Jul 2026 20:46:50 GMT
+
+### Updates
+
+- Fix lint
+
+## 3.1.18
+Wed, 17 Jun 2026 19:38:28 GMT
+
+### Updates
+
+- Update libraries
+
+## 3.1.17
+Wed, 17 Jun 2026 19:15:32 GMT
+
+### Updates
+
+- Consume bridge data object in activity history
+
+## 3.1.16
+Mon, 01 Jun 2026 21:07:39 GMT
+
+_Version update only_
+
+## 3.1.15
+Fri, 08 May 2026 20:39:57 GMT
+
+### Updates
+
+- Fix tests
+
+## 3.1.14
+Tue, 28 Apr 2026 18:29:40 GMT
+
+_Version update only_
+
+## 3.1.13
+Mon, 27 Apr 2026 20:18:15 GMT
+
+### Updates
+
+- Add CLAUDE.md
+
+## 3.1.12
+Tue, 21 Apr 2026 16:34:29 GMT
+
+### Updates
+
+- Return formatted unclaimed GAS
+
+## 3.1.11
+Fri, 17 Apr 2026 00:42:16 GMT
+
+### Updates
+
+- Migrate from BSBigNumberHelper to BSBigNumber
+- WalletConnectService rewritten with Zod validation to support new params validation
+
+## 3.1.10
+Wed, 15 Apr 2026 19:43:40 GMT
+
+### Updates
+
+- Update Axios dependency
+
+## 3.1.9
+Thu, 09 Apr 2026 18:51:16 GMT
+
+### Updates
+
+- Add relatedAddress property to Transaction type
+
+## 3.1.8
+Wed, 08 Apr 2026 19:25:42 GMT
+
+### Updates
+
+- Add blockchain and isPending properties to Transaction type
+
+## 3.1.7
+Wed, 08 Apr 2026 13:56:56 GMT
+
+_Version update only_
+
+## 3.1.6
+Wed, 01 Apr 2026 15:09:44 GMT
+
+_Version update only_
+
+## 3.1.5
+Tue, 31 Mar 2026 18:49:48 GMT
+
+_Version update only_
+
+## 3.1.4
+Thu, 26 Mar 2026 19:08:54 GMT
+
+### Updates
+
+- Replace RpcCDSAtipicial with ClaimServiceAtipicial and rename DoraVoteServiceAtipicial to VoteServiceAtipicial
+- Centralize bridge, claim, and vote data extraction into their respective services
+- Improve service name typings
+
+## 3.1.3
+Mon, 23 Mar 2026 16:17:33 GMT
+
+_Version update only_
+
+## 3.1.2
+Mon, 23 Mar 2026 12:43:32 GMT
+
+### Updates
+
+- Fix contract hash URL
+
+## 3.1.1
+Fri, 20 Mar 2026 19:51:05 GMT
+
+### Updates
+
+- Fix the contract length on buildContractUrl
+
+## 3.1.0
+Thu, 19 Mar 2026 16:35:03 GMT
+
+### Updates
+
+- Adapt transaction interfaces
+- Update ESLint version
+- Apply new vote, claim, transfer, transaction and explorer interfaces and types
+- Implement new NFT event type
+- Remove tokenHash in NFT event
+- Remove contractHash and rename contractHashUrl to tokenUrl from token event type
+
+## 3.0.6
+Mon, 02 Mar 2026 14:32:56 GMT
+
+### Updates
+
+- Adjust implementations to fit the updated blockchain service interfaces that now support Bitcoin
+- Fix WalletConnect encrypt method that is not handle for empty publicKeys
+
+## 3.0.5
+Sat, 21 Feb 2026 18:56:12 GMT
+
+### Updates
+
+- Update classes to align with the new generateAccount's function interface
+- Replace jest to vitest
+
+## 3.0.4
+Fri, 13 Feb 2026 22:47:31 GMT
+
+### Updates
+
+- Fix transaction amount format
+
+## 3.0.3
+Wed, 11 Feb 2026 21:38:14 GMT
+
+_Version update only_
+
+## 3.0.2
+Tue, 10 Feb 2026 14:48:23 GMT
+
+_Version update only_
+
+## 3.0.1
+Fri, 06 Feb 2026 15:34:13 GMT
+
+### Updates
+
+- New version policy to align with other blockchain packages.
+- Fit into the new NFT interfaces
+
+## 1.19.0
+Thu, 29 Jan 2026 15:41:42 GMT
+
+### Minor changes
+
+- Adapt to new interfaces
+
+## 1.18.0
+Tue, 27 Jan 2026 18:42:09 GMT
+
+### Minor changes
+
+- Change the implementations to fit new blockchain-service interfaces
+- Unify transaction interface
+
+## 1.17.9
+Fri, 09 Jan 2026 18:51:04 GMT
+
+### Patches
+
+- Fix Atipicial 3 bridge
+
+## 1.17.8
+Fri, 02 Jan 2026 18:27:28 GMT
+
+_Version update only_
+
+## 1.17.7
+Fri, 26 Dec 2025 16:54:17 GMT
+
+### Patches
+
+- Add rpcNetworkUrls
+
+## 1.17.6
+Fri, 28 Nov 2025 14:03:41 GMT
+
+_Version update only_
+
+## 1.17.5
+Mon, 17 Nov 2025 15:12:54 GMT
+
+### Patches
+
+- Update Dora TS SDK and create COZ_API_URL variable
+
+## 1.17.4
+Mon, 03 Nov 2025 20:56:35 GMT
+
+### Patches
+
+- Update Dora TS SDK
+
+## 1.17.3
+Mon, 27 Oct 2025 14:12:54 GMT
+
+### Patches
+
+- Insert explorerUri to NFT response
+
+## 1.17.2
+Fri, 24 Oct 2025 22:41:54 GMT
+
+### Patches
+
+- Fix to Atipicial 3 claim
+
+## 1.17.1
+Fri, 10 Oct 2025 12:24:59 GMT
+
+### Patches
+
+- Implement pingNode function
+
+## 1.17.0
+Fri, 10 Oct 2025 01:36:19 GMT
+
+### Minor changes
+
+- Add WalletConnect support
+
+### Patches
+
+- General improvements
+- Improve atipicial-js and atipicial-dappkit import time and Bump dependencies version
+
+## 1.16.3
+Wed, 01 Oct 2025 23:44:28 GMT
+
+_Version update only_
+
+## 1.16.2
+Mon, 08 Sep 2025 19:38:54 GMT
+
+### Patches
+
+- Predicates should return a boolean
+
+## 1.16.1
+Tue, 02 Sep 2025 22:47:47 GMT
+
+### Patches
+
+- Add Solana initial implementation
+- Change Token to BridgeToken type
+
+## 1.16.0
+Mon, 01 Sep 2025 18:24:15 GMT
+
+### Minor changes
+
+- Identify bridge type in transactions
+
+## 1.15.4
+Tue, 19 Aug 2025 15:03:33 GMT
+
+### Patches
+
+- Fix bridge bugs
+
+## 1.15.3
+Tue, 12 Aug 2025 18:55:01 GMT
+
+### Patches
+
+- Refactor AtipicialXBridgeService class
+
+## 1.15.2
+Tue, 24 Jun 2025 16:33:10 GMT
+
+_Version update only_
+
+## 1.15.1
+Mon, 23 Jun 2025 14:15:51 GMT
+
+### Patches
+
+- Stop throwing error when there is no candidatePubKey in getVoteDetailsByAddress function
+
+## 1.15.0
+Tue, 10 Jun 2025 20:47:03 GMT
+
+### Minor changes
+
+- Add AtipicialXBridge feature and refactor code to use new helpers
+
+## 1.14.1
+Mon, 09 Jun 2025 19:18:09 GMT
+
+### Patches
+
+- Change service to private accessor in Vote Services
+
+## 1.14.0
+Mon, 09 Jun 2025 18:48:47 GMT
+
+### Minor changes
+
+- Add getCandidatesToVote, getVoteDetailsByAddress, vote and calculateVoteFee methods
+
+## 1.13.2
+Sat, 31 May 2025 13:37:40 GMT
+
+### Patches
+
+- Improve formatNumber method
+
+## 1.13.1
+Thu, 29 May 2025 19:24:38 GMT
+
+### Patches
+
+- Update Dora TS (SDK)
+- Remove default values for Mint and Burn
+
+## 1.13.0
+Thu, 22 May 2025 23:10:38 GMT
+
+### Minor changes
+
+- Create the exportFullTransactionsByAddress method
+
+### Patches
+
+- Add pageSize param for getFullTransactionsByAddress
+
+### Updates
+
+- Update tests with pagination
+
+## 1.12.2
+Thu, 15 May 2025 16:10:56 GMT
+
+### Patches
+
+- Use toDecimal in amount of getTransactionsByAddress
+
+## 1.12.1
+Thu, 15 May 2025 12:48:12 GMT
+
+### Patches
+
+- Revert position between Mint and Burn
+
+## 1.12.0
+Tue, 06 May 2025 15:11:09 GMT
+
+### Minor changes
+
+- Create the getFullTransactionsByAddress method, update Axios library and use constants file
+
+## 1.11.0
+Tue, 29 Apr 2025 20:48:08 GMT
+
+### Minor changes
+
+- Remove FlamingoTokenInfoPricesResponse type and extend FlamingoForthewinEDS to FlamingoForthewinEDSAtipicial
+
+## 1.10.10
+Thu, 17 Apr 2025 20:49:07 GMT
+
+### Patches
+
+- Verify if the user is connected into the ATC  app before any interaction
+
+## 1.10.9
+Wed, 16 Apr 2025 20:44:43 GMT
+
+### Patches
+
+- Update license
+
+## 1.10.8
+Wed, 09 Apr 2025 20:52:04 GMT
+
+### Patches
+
+- Add ownersChains parameter in NFT requests
+
+## 1.10.7
+Fri, 28 Mar 2025 21:07:26 GMT
+
+_Version update only_
+
+## 1.10.6
+Wed, 26 Mar 2025 18:20:32 GMT
+
+### Patches
+
+- Export native tokens
+
+## 1.10.5
+Fri, 14 Mar 2025 21:40:49 GMT
+
+### Patches
+
+- Add Forthewin API to get prices in Atipicial 3
+
+## 1.10.4
+Fri, 14 Mar 2025 20:31:57 GMT
+
+_Version update only_
+
+## 1.10.3
+Tue, 11 Mar 2025 18:24:06 GMT
+
+_Version update only_
+
+## 1.10.2
+Fri, 07 Mar 2025 18:13:11 GMT
+
+_Version update only_
+
+## 1.10.1
+Tue, 25 Feb 2025 17:58:55 GMT
+
+### Patches
+
+- Change untilIndex to untilIndexByBlockchainService record
+
+## 1.10.0
+Mon, 24 Feb 2025 21:18:54 GMT
+
+### Minor changes
+
+- Add functionality to generate address until a specific index
+
+## 1.9.2
+Mon, 13 Jan 2025 20:30:41 GMT
+
+_Version update only_
+
+## 1.9.1
+Thu, 09 Jan 2025 13:28:41 GMT
+
+_Version update only_
+
+## 1.9.0
+Tue, 07 Jan 2025 14:34:40 GMT
+
+### Minor changes
+
+- Add getAddressTemplateUrl and getTxTemplateUrl methods
+
+## 1.8.10
+Mon, 06 Jan 2025 15:08:15 GMT
+
+### Updates
+
+- Fix getTransactionsByAddress test expect
+
+## 1.8.9
+Wed, 18 Dec 2024 11:11:37 GMT
+
+_Version update only_
+
+## 1.8.8
+Mon, 16 Dec 2024 19:45:17 GMT
+
+_Version update only_
+
+## 1.8.7
+Sat, 14 Dec 2024 02:56:00 GMT
+
+### Patches
+
+- Fix error when trying to send a value with more decimal places than the token supports 
+
+## 1.8.6
+Sat, 14 Dec 2024 02:14:48 GMT
+
+_Version update only_
+
+## 1.8.5
+Fri, 13 Dec 2024 17:18:59 GMT
+
+_Version update only_
+
+## 1.8.4
+Tue, 19 Nov 2024 20:13:09 GMT
+
+_Version update only_
+
+## 1.8.3
+Mon, 11 Nov 2024 22:23:41 GMT
+
+_Version update only_
+
+## 1.8.2
+Thu, 07 Nov 2024 20:52:20 GMT
+
+_Version update only_
+
+## 1.8.1
+Wed, 06 Nov 2024 17:50:37 GMT
+
+### Patches
+
+- Add generic BSName in GetLedgerTransport
+
+## 1.8.0
+Mon, 04 Nov 2024 22:49:56 GMT
+
+### Minor changes
+
+- Adjust interfaces to support account blockchain and Remove Flamingo swap implementation
+
+## 1.7.1
+Fri, 11 Oct 2024 20:36:36 GMT
+
+### Patches
+
+- Adjust ATC token return from Flamingo
+
+## 1.7.0
+Fri, 11 Oct 2024 19:26:03 GMT
+
+### Minor changes
+
+- Update Flamingo Finance API and add new tokens
+
+## 1.6.1
+Wed, 09 Oct 2024 18:36:56 GMT
+
+### Patches
+
+- Fix imageId of Ghostmarket IPFS image and add new tests for it
+
+## 1.6.0
+Tue, 01 Oct 2024 20:21:36 GMT
+
+### Minor changes
+
+- Implement testNetwork method
+
+## 1.5.0
+Tue, 01 Oct 2024 16:41:24 GMT
+
+### Minor changes
+
+- Implement clone self method
+
+### Patches
+
+- Fix issue where the array returned by transfer method is inconsistent
+
+## 1.4.3
+Fri, 20 Sep 2024 18:26:56 GMT
+
+### Patches
+
+- update route displayed
+
+## 1.4.2
+Fri, 20 Sep 2024 15:17:55 GMT
+
+### Patches
+
+- Including wrap logic
+
+## 1.4.1
+Mon, 09 Sep 2024 17:25:50 GMT
+
+### Patches
+
+- Update export
+
+## 1.4.0
+Mon, 09 Sep 2024 15:52:55 GMT
+
+### Minor changes
+
+- Add to support ledger multi account
+- Add support to send in bulk
+
+### Patches
+
+- Make USDL unavailable for swap
+
+## 1.3.3
+Thu, 22 Aug 2024 18:40:33 GMT
+
+### Patches
+
+- Fixing ATC implementation
+
+## 1.3.2
+Wed, 21 Aug 2024 16:07:49 GMT
+
+### Patches
+
+- Update swap lib
+
+## 1.3.1
+Tue, 20 Aug 2024 20:50:53 GMT
+
+### Patches
+
+- Fixing swappable tokens list
+- Fixing list swappable tokens
+
+## 1.3.0
+Tue, 20 Aug 2024 17:24:34 GMT
+
+### Minor changes
+
+- Implement swap multi invoke support
+
+## 1.2.1
+Wed, 14 Aug 2024 18:41:00 GMT
+
+### Patches
+
+- Fix issue where sending assets from ATIPICIAL3 is being incorrectly flagged as arbitrary contract invocation
+
+## 1.2.0
+Fri, 02 Aug 2024 15:38:35 GMT
+
+### Minor changes
+
+- Implement new BlockchainDataService for AtipicialX using Blockscout
+
+## 1.1.2
+Tue, 30 Jul 2024 18:09:30 GMT
+
+### Patches
+
+- Fix GhostMarket IPFS NFT image
+
+## 1.1.1
+Mon, 29 Jul 2024 14:31:19 GMT
+
+### Patches
+
+- Fix normalization hash issues
+
+## 1.1.0
+Tue, 23 Jul 2024 21:44:02 GMT
+
+### Minor changes
+
+- Fix classes to new interfaces
+
+## 1.0.4
+Wed, 17 Jul 2024 16:13:43 GMT
+
+### Patches
+
+- Refactor related to multi network
+
+## 1.0.3
+Mon, 15 Jul 2024 22:59:16 GMT
+
+### Patches
+
+- Solve bug related to bs-electron by detecting two identical methods
+
+## 1.0.2
+Mon, 15 Jul 2024 19:04:57 GMT
+
+### Patches
+
+- Add support to multi network to AvailableNetworkIds type
+
+## 1.0.1
+Mon, 15 Jul 2024 18:05:28 GMT
+
+### Patches
+
+- Adapt constants to work with multi chain
+
+## 1.0.0
+Fri, 12 Jul 2024 00:06:10 GMT
+
+### Breaking changes
+
+- Adapt network to support multi network
+
+## 0.14.3
+Wed, 10 Jul 2024 20:54:48 GMT
+
+### Patches
+
+- Change NUDES to TIPS
+- Move  @ledgerhq/hw-transport-node-hid to devDependencies
+
+## 0.14.2
+Fri, 28 Jun 2024 21:53:35 GMT
+
+### Patches
+
+- Removing react-native
+
+## 0.14.1
+Fri, 28 Jun 2024 20:18:04 GMT
+
+### Patches
+
+- Setting optional dependency of react native
+
+## 0.14.0
+Thu, 27 Jun 2024 21:15:08 GMT
+
+### Minor changes
+
+- Including flamingo swap feature
+
+### Updates
+
+- Lint project
+
+## 0.13.1
+Thu, 20 Jun 2024 16:23:59 GMT
+
+### Patches
+
+- Emit "getSignatureEnd" when throws an error
+
+## 0.13.0
+Wed, 19 Jun 2024 15:40:02 GMT
+
+### Minor changes
+
+- Add emitterr in LedgerServiceEthereum
+
+## 0.12.0
+Wed, 19 Jun 2024 03:12:58 GMT
+
+### Minor changes
+
+- Export LedgerServiceAtipicial
+
+## 0.11.4
+Tue, 11 Jun 2024 19:22:55 GMT
+
+### Patches
+
+- Extend new CryptoCompareEDS class to get support to token price history
+- Added Has Token method
+
+## 0.11.3
+Thu, 06 Jun 2024 14:55:18 GMT
+
+### Patches
+
+-  Add new method to get rpc list
+
+## 0.11.2
+Thu, 30 May 2024 03:53:54 GMT
+
+_Version update only_
+
+## 0.11.1
+Mon, 22 Apr 2024 18:15:20 GMT
+
+### Patches
+
+- Fix encrypt method return to always return a promise
+
+## 0.11.0
+Mon, 15 Apr 2024 20:14:54 GMT
+
+### Minor changes
+
+- Adaptation to work with the bs-electron package
+
+## 0.10.0
+Thu, 04 Apr 2024 19:52:20 GMT
+
+### Minor changes
+
+- Add ledger support
+
+## 0.9.3
+Wed, 28 Feb 2024 17:43:01 GMT
+
+### Patches
+
+- Add creator infomations in nft methods return
+
+## 0.9.2
+Tue, 30 Jan 2024 18:26:00 GMT
+
+### Patches
+
+- Fixed bug preventing decryption in dev mode in React Native
+- Fixed lint errors that were preventing the build
+
+## 0.9.1
+Wed, 06 Dec 2023 21:51:30 GMT
+
+### Patches
+
+- Prevent the getAllTransaction method from breaking when Dora returns data from v1
+
+## 0.9.0
+Tue, 05 Dec 2023 18:42:10 GMT
+
+### Minor changes
+
+- Inserted within the TokenPricesResponse type the token hash
+

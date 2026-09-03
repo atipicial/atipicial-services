@@ -1,0 +1,29 @@
+{
+  "name": "@atipicial/bs-electron",
+  "version": "3.1.19",
+  "repository": "https://github.com/Atipicial/blockchain-services",
+  "license": "GPL-3.0-only",
+  "author": "Coz",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && rm -f *.tgz && npm run typecheck && tsc",
+    "format": "eslint --fix",
+    "lint": "eslint .",
+    "package": "npm run build && npm pack",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@atipicial/blockchain-service": "workspace:*",
+    "lodash.clonedeep": "~4.5.0"
+  },
+  "devDependencies": {
+    "@electron-toolkit/preload": "*",
+    "@types/lodash.clonedeep": "~4.5.9",
+    "@types/node": "~25.6.0",
+    "electron": ">=39.8.5",
+    "eslint": "~10.3.0",
+    "typescript": "~6.0.3"
+  }
+}

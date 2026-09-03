@@ -1,0 +1,44 @@
+{
+  "name": "@atipicial/bs-atipicial",
+  "version": "3.1.19",
+  "repository": "https://github.com/Atipicial/blockchain-services",
+  "license": "GPL-3.0-only",
+  "author": "Coz",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && rm -f *.tgz && npm run typecheck && tsc --project tsconfig.build.json",
+    "format": "eslint --fix",
+    "lint": "eslint .",
+    "package": "npm run build && npm pack",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "overrides": {
+    "@atipicial/atipicial-core": "5.9.0",
+    "@atipicial/atipicial-js": "5.9.0"
+  },
+  "dependencies": {
+    "@atipicial/blockchain-service": "workspace:*",
+    "@atipicial/dora-ts": "0.6.2",
+    "@atipicial/atipicial-core": "5.9.0",
+    "@atipicial/atipicial-dappkit": "~1.0.0",
+    "@atipicial/atipicial-js": "5.9.0",
+    "axios": "1.16.0"
+  },
+  "devDependencies": {
+    "@atipicial/atipicial-dappkit-types": "~1.0.0",
+    "@ledgerhq/hw-transport": "6.35.1",
+    "@ledgerhq/hw-transport-node-hid": "~6.33.1",
+    "@types/node": "~25.6.0",
+    "date-fns": "~4.1.0",
+    "dotenv": "~17.4.2",
+    "eslint": "~10.3.0",
+    "typescript": "~6.0.3",
+    "vitest": "~4.1.5",
+    "zod": "~4.4.3"
+  }
+}

@@ -1,0 +1,1101 @@
+{
+  "name": "@atipicial/blockchain-service",
+  "entries": [
+    {
+      "version": "3.1.19",
+      "tag": "@atipicial/blockchain-service_v3.1.19",
+      "date": "Fri, 10 Jul 2026 20:46:50 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.18",
+      "tag": "@atipicial/blockchain-service_v3.1.18",
+      "date": "Wed, 17 Jun 2026 19:38:28 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Update libraries"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.17",
+      "tag": "@atipicial/blockchain-service_v3.1.17",
+      "date": "Wed, 17 Jun 2026 19:15:32 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Consume bridge data object in activity history"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.16",
+      "tag": "@atipicial/blockchain-service_v3.1.16",
+      "date": "Mon, 01 Jun 2026 21:07:39 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.15",
+      "tag": "@atipicial/blockchain-service_v3.1.15",
+      "date": "Fri, 08 May 2026 20:39:57 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.14",
+      "tag": "@atipicial/blockchain-service_v3.1.14",
+      "date": "Tue, 28 Apr 2026 18:29:40 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.13",
+      "tag": "@atipicial/blockchain-service_v3.1.13",
+      "date": "Mon, 27 Apr 2026 20:18:15 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add CLAUDE.md"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.12",
+      "tag": "@atipicial/blockchain-service_v3.1.12",
+      "date": "Tue, 21 Apr 2026 16:34:29 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.11",
+      "tag": "@atipicial/blockchain-service_v3.1.11",
+      "date": "Fri, 17 Apr 2026 00:42:16 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Replace BSBigNumberHelper by a new BSBigNumber / BSBigHumanAmount / BSBigUnitAmount class hierarchy with fluent arithmetic and unit conversion"
+          },
+          {
+            "comment": "Add new types and interfaces to support params validation"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.10",
+      "tag": "@atipicial/blockchain-service_v3.1.10",
+      "date": "Wed, 15 Apr 2026 19:43:40 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Update Axios dependency"
+          },
+          {
+            "comment": "Organize interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.9",
+      "tag": "@atipicial/blockchain-service_v3.1.9",
+      "date": "Thu, 09 Apr 2026 18:51:16 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add relatedAddress property to Transaction type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.8",
+      "tag": "@atipicial/blockchain-service_v3.1.8",
+      "date": "Wed, 08 Apr 2026 19:25:42 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add blockchain and isPending properties to Transaction type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.7",
+      "tag": "@atipicial/blockchain-service_v3.1.7",
+      "date": "Wed, 08 Apr 2026 13:56:56 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.6",
+      "tag": "@atipicial/blockchain-service_v3.1.6",
+      "date": "Wed, 01 Apr 2026 15:09:44 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.5",
+      "tag": "@atipicial/blockchain-service_v3.1.5",
+      "date": "Tue, 31 Mar 2026 18:49:48 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.4",
+      "tag": "@atipicial/blockchain-service_v3.1.4",
+      "date": "Thu, 26 Mar 2026 19:08:54 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Remove generic parameters from transaction types and data service interfaces"
+          },
+          {
+            "comment": "Replace transaction type discriminator and event tokenType with a flexible data field and getTransactionData pattern"
+          },
+          {
+            "comment": "Introduce IClaimService, IBSWithFaucet, and generic TokenService with validation methods"
+          },
+          {
+            "comment": "Improve service name typings"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.3",
+      "tag": "@atipicial/blockchain-service_v3.1.3",
+      "date": "Mon, 23 Mar 2026 16:17:33 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add totalAmount in UTXO view"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.2",
+      "tag": "@atipicial/blockchain-service_v3.1.2",
+      "date": "Mon, 23 Mar 2026 12:43:32 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.1",
+      "tag": "@atipicial/blockchain-service_v3.1.1",
+      "date": "Fri, 20 Mar 2026 19:51:05 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.0",
+      "tag": "@atipicial/blockchain-service_v3.1.0",
+      "date": "Thu, 19 Mar 2026 16:35:03 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add interfaces for UTXO transactions"
+          },
+          {
+            "comment": "Improve interfaces and types for WalletConnect"
+          },
+          {
+            "comment": "Improve claim, transfer, transaction and explorer interfaces and types"
+          },
+          {
+            "comment": "Change NFT event type"
+          },
+          {
+            "comment": "Remove tokenHash in NFT event type"
+          },
+          {
+            "comment": "Remove contractHash and rename contractHashUrl to tokenUrl from token event type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.6",
+      "tag": "@atipicial/blockchain-service_v3.0.6",
+      "date": "Mon, 02 Mar 2026 14:32:56 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add decodeBase58Check method, improve types, interfaces and helpers"
+          },
+          {
+            "comment": "Add isBase64 method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.5",
+      "tag": "@atipicial/blockchain-service_v3.0.5",
+      "date": "Sat, 21 Feb 2026 18:56:12 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Update generateAccount's function to return a promise"
+          },
+          {
+            "comment": "Replace jest to vitest"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.4",
+      "tag": "@atipicial/blockchain-service_v3.0.4",
+      "date": "Fri, 13 Feb 2026 22:47:31 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Fix error when receiving a string as decimals"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.3",
+      "tag": "@atipicial/blockchain-service_v3.0.3",
+      "date": "Wed, 11 Feb 2026 21:38:14 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.2",
+      "tag": "@atipicial/blockchain-service_v3.0.2",
+      "date": "Tue, 10 Feb 2026 14:48:23 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.1",
+      "tag": "@atipicial/blockchain-service_v3.0.1",
+      "date": "Fri, 06 Feb 2026 15:34:13 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Remove priorityFee parameter from Transfer methods"
+          },
+          {
+            "comment": "New version policy to align with other blockchain packages."
+          },
+          {
+            "comment": "Remove the collection requirement from NFT interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.24.0",
+      "tag": "@atipicial/blockchain-service_v1.24.0",
+      "date": "Thu, 29 Jan 2026 15:41:42 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Remove generic type default value"
+          },
+          {
+            "comment": "New method in BridgeAtipicialAtipicialxService to get the token from multichainId"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.23.0",
+      "tag": "@atipicial/blockchain-service_v1.23.0",
+      "date": "Tue, 27 Jan 2026 18:42:09 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Change interface to fit with Stellar implementation"
+          },
+          {
+            "comment": "Unify transaction interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.8",
+      "tag": "@atipicial/blockchain-service_v1.22.8",
+      "date": "Fri, 09 Jan 2026 18:51:04 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add self config and add THexString type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.7",
+      "tag": "@atipicial/blockchain-service_v1.22.7",
+      "date": "Fri, 02 Jan 2026 18:27:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change variable names"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.6",
+      "tag": "@atipicial/blockchain-service_v1.22.6",
+      "date": "Fri, 26 Dec 2025 16:54:17 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Improve validateNetwork method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.5",
+      "tag": "@atipicial/blockchain-service_v1.22.5",
+      "date": "Fri, 28 Nov 2025 14:03:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix GhostMarket url image"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.4",
+      "tag": "@atipicial/blockchain-service_v1.22.4",
+      "date": "Mon, 17 Nov 2025 15:12:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update Dora TS SDK and create COZ_API_URL variable"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.3",
+      "tag": "@atipicial/blockchain-service_v1.22.3",
+      "date": "Mon, 27 Oct 2025 14:12:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Insert explorerUri to NFT response"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.2",
+      "tag": "@atipicial/blockchain-service_v1.22.2",
+      "date": "Fri, 24 Oct 2025 22:41:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix isClaimable method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.1",
+      "tag": "@atipicial/blockchain-service_v1.22.1",
+      "date": "Fri, 10 Oct 2025 12:24:59 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change pingNetwork to pingNode"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.22.0",
+      "tag": "@atipicial/blockchain-service_v1.22.0",
+      "date": "Fri, 10 Oct 2025 01:36:19 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "General improvements"
+          },
+          {
+            "comment": "Add BSKeychainHelper to deal with mnemonic"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Add WalletConnect interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.21.2",
+      "tag": "@atipicial/blockchain-service_v1.21.2",
+      "date": "Wed, 01 Oct 2025 23:44:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Export BSBigNumber const as BigNumber from bignumber.js"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.21.1",
+      "tag": "@atipicial/blockchain-service_v1.21.1",
+      "date": "Mon, 08 Sep 2025 19:38:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Predicates should return a boolean"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.21.0",
+      "tag": "@atipicial/blockchain-service_v1.21.0",
+      "date": "Tue, 02 Sep 2025 22:47:47 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add Solana initial implementation"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Change Token to BridgeToken type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.20.0",
+      "tag": "@atipicial/blockchain-service_v1.20.0",
+      "date": "Mon, 01 Sep 2025 18:24:15 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add bridge type property in transaction types"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.19.3",
+      "tag": "@atipicial/blockchain-service_v1.19.3",
+      "date": "Tue, 19 Aug 2025 15:03:33 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update bridge interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.19.2",
+      "tag": "@atipicial/blockchain-service_v1.19.2",
+      "date": "Tue, 12 Aug 2025 18:55:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add BridgeOrchestrator interface and update AtipicialXBrigeService interface"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.19.1",
+      "tag": "@atipicial/blockchain-service_v1.19.1",
+      "date": "Tue, 24 Jun 2025 16:33:10 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Apply a lowercase to hash within the normalizeHash function."
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.19.0",
+      "tag": "@atipicial/blockchain-service_v1.19.0",
+      "date": "Tue, 10 Jun 2025 20:47:03 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add AtipicialXBridge feature and helpers"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.18.2",
+      "tag": "@atipicial/blockchain-service_v1.18.2",
+      "date": "Sat, 31 May 2025 13:37:40 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Improve formatNumber method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.18.1",
+      "tag": "@atipicial/blockchain-service_v1.18.1",
+      "date": "Thu, 29 May 2025 19:24:38 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update Dora TS (SDK)"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.18.0",
+      "tag": "@atipicial/blockchain-service_v1.18.0",
+      "date": "Thu, 22 May 2025 23:10:38 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add pageSize param for getFullTransactionsByAddress"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Create the exportFullTransactionsByAddress method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.17.1",
+      "tag": "@atipicial/blockchain-service_v1.17.1",
+      "date": "Tue, 06 May 2025 15:11:09 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Create constants file and remove unused types"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.17.0",
+      "tag": "@atipicial/blockchain-service_v1.17.0",
+      "date": "Tue, 29 Apr 2025 20:48:08 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Create FlamingoForthewinEDS to get token prices and add FlamingoTokenInfoPricesResponse type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.16.3",
+      "tag": "@atipicial/blockchain-service_v1.16.3",
+      "date": "Wed, 16 Apr 2025 20:44:43 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update license"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.16.2",
+      "tag": "@atipicial/blockchain-service_v1.16.2",
+      "date": "Fri, 28 Mar 2025 21:07:26 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Remove BSMigrateAtipicial interface"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.16.1",
+      "tag": "@atipicial/blockchain-service_v1.16.1",
+      "date": "Wed, 26 Mar 2025 18:20:32 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Export native tokens"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.16.0",
+      "tag": "@atipicial/blockchain-service_v1.16.0",
+      "date": "Fri, 14 Mar 2025 20:31:57 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add waitMigration function"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.15.3",
+      "tag": "@atipicial/blockchain-service_v1.15.3",
+      "date": "Tue, 11 Mar 2025 18:24:06 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change string[] to string return on BSMigrationAtipicial interface"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.15.2",
+      "tag": "@atipicial/blockchain-service_v1.15.2",
+      "date": "Fri, 07 Mar 2025 18:13:11 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Create hasMigrationAtipicial method and its types"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.15.1",
+      "tag": "@atipicial/blockchain-service_v1.15.1",
+      "date": "Tue, 25 Feb 2025 17:58:55 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change untilIndex to untilIndexByBlockchainService record"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.15.0",
+      "tag": "@atipicial/blockchain-service_v1.15.0",
+      "date": "Mon, 24 Feb 2025 21:18:54 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add functionality to generate address until a specific index"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.14.0",
+      "tag": "@atipicial/blockchain-service_v1.14.0",
+      "date": "Mon, 13 Jan 2025 20:30:41 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add types for extraIdToReceive and setExtraIdToReceive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.13.3",
+      "tag": "@atipicial/blockchain-service_v1.13.3",
+      "date": "Thu, 09 Jan 2025 13:28:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add the network property again"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.13.2",
+      "tag": "@atipicial/blockchain-service_v1.13.2",
+      "date": "Tue, 07 Jan 2025 14:34:40 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add getAddressTemplateUrl and getTxTemplateUrl type methods, addressTemplateUrl and txTemplateUrl properties in SwapServiceToken"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.13.1",
+      "tag": "@atipicial/blockchain-service_v1.13.1",
+      "date": "Mon, 06 Jan 2025 15:08:15 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Deprecate waitForTransaction method"
+          },
+          {
+            "comment": "Implement denormalizeHash method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.13.0",
+      "tag": "@atipicial/blockchain-service_v1.13.0",
+      "date": "Wed, 18 Dec 2024 11:11:37 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add new error event for SwapService interface"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.12.0",
+      "tag": "@atipicial/blockchain-service_v1.12.0",
+      "date": "Mon, 16 Dec 2024 19:45:17 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add new function to format number"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.11.0",
+      "tag": "@atipicial/blockchain-service_v1.11.0",
+      "date": "Sat, 14 Dec 2024 02:14:48 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add normalizeHash function"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.10.2",
+      "tag": "@atipicial/blockchain-service_v1.10.2",
+      "date": "Fri, 13 Dec 2024 17:18:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add log in swap response"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.10.1",
+      "tag": "@atipicial/blockchain-service_v1.10.1",
+      "date": "Tue, 19 Nov 2024 20:13:09 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add maxAttemps customizable on waitForAccountTransaction"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.10.0",
+      "tag": "@atipicial/blockchain-service_v1.10.0",
+      "date": "Mon, 11 Nov 2024 22:23:41 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add refund in SwapStatus type and separate getStatus method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.9.0",
+      "tag": "@atipicial/blockchain-service_v1.9.0",
+      "date": "Thu, 07 Nov 2024 20:52:20 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add a new function to wait for a specific transaction by an account"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.8.0",
+      "tag": "@atipicial/blockchain-service_v1.8.0",
+      "date": "Mon, 04 Nov 2024 22:49:56 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Adjust swap interfaces"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.7.0",
+      "tag": "@atipicial/blockchain-service_v1.7.0",
+      "date": "Fri, 11 Oct 2024 19:26:03 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Update Flamingo Finance API"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.6.0",
+      "tag": "@atipicial/blockchain-service_v1.6.0",
+      "date": "Tue, 01 Oct 2024 20:21:36 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Implement testNetwork method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.5.0",
+      "tag": "@atipicial/blockchain-service_v1.5.0",
+      "date": "Tue, 01 Oct 2024 16:41:24 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Implement clone self method"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.4.0",
+      "tag": "@atipicial/blockchain-service_v1.4.0",
+      "date": "Mon, 09 Sep 2024 15:52:55 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add to support ledger multi account"
+          },
+          {
+            "comment": "Add support to send in bulk"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.3.2",
+      "tag": "@atipicial/blockchain-service_v1.3.2",
+      "date": "Wed, 21 Aug 2024 16:07:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update swap lib"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.3.1",
+      "tag": "@atipicial/blockchain-service_v1.3.1",
+      "date": "Tue, 20 Aug 2024 20:50:53 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fixing list swappable tokens"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.3.0",
+      "tag": "@atipicial/blockchain-service_v1.3.0",
+      "date": "Tue, 20 Aug 2024 17:24:34 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Implement swap multi invoke support"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.2.0",
+      "tag": "@atipicial/blockchain-service_v1.2.0",
+      "date": "Fri, 02 Aug 2024 15:38:35 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Implement new BlockchainDataService for AtipicialX using Blockscout"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.1.0",
+      "tag": "@atipicial/blockchain-service_v1.1.0",
+      "date": "Tue, 23 Jul 2024 21:44:02 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Adapt interfaces to work with Moralis"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.0.2",
+      "tag": "@atipicial/blockchain-service_v1.0.2",
+      "date": "Wed, 17 Jul 2024 16:13:43 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Refactor related to multi network"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.0.1",
+      "tag": "@atipicial/blockchain-service_v1.0.1",
+      "date": "Mon, 15 Jul 2024 18:05:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Remove PartialNetwork type"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "tag": "@atipicial/blockchain-service_v1.0.0",
+      "date": "Fri, 12 Jul 2024 00:06:10 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Adapt network to support multi network"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.13.0",
+      "tag": "@atipicial/blockchain-service_v0.13.0",
+      "date": "Thu, 27 Jun 2024 21:15:08 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Lint project"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Including flamingo swap feature"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.12.0",
+      "tag": "@atipicial/blockchain-service_v0.12.0",
+      "date": "Wed, 19 Jun 2024 15:40:02 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add emitter in LedgerService"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.2",
+      "tag": "@atipicial/blockchain-service_v0.11.2",
+      "date": "Tue, 11 Jun 2024 19:22:55 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "New class that uses CryptoCompare as ExchangeDataProvider"
+          },
+          {
+            "comment": "Added Has Token method interface "
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.1",
+      "tag": "@atipicial/blockchain-service_v0.11.1",
+      "date": "Thu, 06 Jun 2024 14:55:18 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": " Add new method to get rpc list"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.0",
+      "tag": "@atipicial/blockchain-service_v0.11.0",
+      "date": "Mon, 15 Apr 2024 20:14:54 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Adaptation to work with the bs-electron package"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.0",
+      "tag": "@atipicial/blockchain-service_v0.10.0",
+      "date": "Thu, 04 Apr 2024 19:52:20 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix ledger interfaces"
+          },
+          {
+            "comment": "Update ledger interfaces"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Ledger support"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.1",
+      "tag": "@atipicial/blockchain-service_v0.9.1",
+      "date": "Wed, 28 Feb 2024 17:43:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add creator infomations in nft methods return"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.0",
+      "tag": "@atipicial/blockchain-service_v0.9.0",
+      "date": "Tue, 05 Dec 2023 18:42:10 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Inserted within the TokenPricesResponse type the token hash"
+          }
+        ]
+      }
+    }
+  ]
+}

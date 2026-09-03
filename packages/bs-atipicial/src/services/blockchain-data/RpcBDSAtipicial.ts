@@ -1,0 +1,281 @@
+import {
+  BSBigUnitAmount,
+  BSUtilsHelper,
+  type IBlockchainDataService,
+  type TBalanceResponse,
+  type TBSToken,
+  type TContractMethod,
+  type TContractParameter,
+  type TContractResponse,
+  type TGetTransactionsByAddressParams,
+  type TGetTransactionsByAddressResponse,
+  type TTransactionDefault,
+  type TTransactionDefaultEvent,
+  type TTransactionDefaultGenericEvent,
+  type TTransactionDefaultNftEvent,
+  type TTransactionDefaultTokenEvent,
+} from '@atipicial/blockchain-service'
+import type { IBSAtipicial, TBSAtipicialName, TRpcBDSAtipicialNotification, TRpcBDSAtipicialNotificationState } from '../../types'
+import { BSAtipicialAtipicialJsSingletonHelper } from '../../helpers/BSAtipicialAtipicialJsSingletonHelper'
+import { BSAtipicialAtipicialDappKitSingletonHelper } from '../../helpers/BSAtipicialAtipicialDappKitSingletonHelper'
+
+export class RpcBDSAtipicial implements IBlockchainDataService<TBSAtipicialName> {
+  readonly maxTimeToConfirmTransactionInMs: number = 1000 * 60 * 2 // 2 minutes
+  readonly _tokenCache: Map<string, TBSToken> = new Map()
+  readonly _service: IBSAtipicial
+
+  constructor(service: IBSAtipicial) {
+    this._service = service
+  }
+
+  #convertByteStringToAddress(byteString: string): string {
+    const { wallet, u } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+    const account = new wallet.Account(u.reverseHex(u.HexString.fromBase64(byteString).toString()))
+    return account.address
+  }
+
+  async #parseTransferNotification({
+    contract: contractHash,
+    state,
+  }: TRpcBDSAtipicialNotification): Promise<TTransactionDefaultTokenEvent | TTransactionDefaultNftEvent | undefined> {
+    const properties = (Array.isArray(state) ? state : (state?.value ?? [])) as TRpcBDSAtipicialNotificationState[]
+
+    if (properties.length !== 3 && properties.length !== 4) return
+
+    const isAsset = properties.length === 3
+    const from = properties[0].value as string
+    const to = properties[1].value as string
+    const convertedFrom = from ? this.#convertByteStringToAddress(from) : undefined
+    const convertedTo = to ? this.#convertByteStringToAddress(to) : undefined
+    const fromUrl = convertedFrom ? this._service.explorerService.buildAddressUrl(convertedFrom) : undefined
+    const toUrl = convertedTo ? this._service.explorerService.buildAddressUrl(convertedTo) : undefined
+
+    if (isAsset) {
+      const token = await this.getTokenInfo(contractHash)
+      const amount = properties[2].value || '0'
+
+      return {
+        eventType: 'token',
+        amount: new BSBigUnitAmount(amount, token.decimals).toHuman().toFormatted(),
+        methodName: 'transfer',
+        from: convertedFrom,
+        fromUrl,
+        to: convertedTo,
+        toUrl,
+        tokenUrl: this._service.explorerService.buildContractUrl(contractHash),
+        token,
+      }
+    }
+
+    const tokenHash = properties[3].value as string
+
+    const [nft] = await BSUtilsHelper.tryCatch(() =>
+      this._service.nftDataService.getNft({ collectionHash: contractHash, tokenHash })
+    )
+
+    return {
+      eventType: 'nft',
+      amount: '1',
+      methodName: 'transfer',
+      from: convertedFrom,
+      fromUrl,
+      to: convertedTo,
+      toUrl,
+      nft,
+    }
+  }
+
+  #parseVoteNotification({ state }: TRpcBDSAtipicialNotification): TTransactionDefaultGenericEvent | undefined {
+    const properties = (Array.isArray(state) ? state : (state?.value ?? [])) as TRpcBDSAtipicialNotificationState[]
+    if (properties.length !== 4) return
+
+    const from = properties[0].value as string
+    const convertedFrom = this.#convertByteStringToAddress(from)
+
+    const candidatePubKeyBase64 = properties[2].value as string
+    const { u } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+    const candidate = u.HexString.fromBase64(candidatePubKeyBase64).toString()
+
+    return this._service.voteService._buildTransactionEvent(convertedFrom, candidate)
+  }
+
+  async _extractEventsFromNotifications(notifications: TRpcBDSAtipicialNotification[] = []) {
+    const events: TTransactionDefaultEvent[] = []
+
+    const promises = notifications.map(async (notification, index) => {
+      const eventName = notification.eventname.toLowerCase()
+      if (eventName === 'transfer') {
+        const transferEvent = await this.#parseTransferNotification(notification)
+        if (transferEvent) {
+          events.splice(index, 0, transferEvent)
+        }
+      }
+
+      if (eventName === 'vote') {
+        const voteEvent = this.#parseVoteNotification(notification)
+        if (voteEvent) {
+          events.splice(index, 0, voteEvent)
+        }
+      }
+    })
+
+    await Promise.allSettled(promises)
+
+    return events
+  }
+
+  async getTransaction(hash: string): Promise<TTransactionDefault<TBSAtipicialName>> {
+    try {
+      const { rpc } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+      const rpcClient = new rpc.RPCClient(this._service.network.url)
+      const response = await rpcClient.getRawTransaction(hash, true)
+      const applicationLog = await rpcClient.getApplicationLog(hash)
+      const notifications = applicationLog.executions.flatMap(execution => execution.notifications)
+
+      const events = await this._extractEventsFromNotifications(notifications)
+
+      const txId = response.hash
+      const txIdUrl = this._service.explorerService.buildTransactionUrl(txId)
+
+      const data = {
+        ...this._service.claimService._getTransactionDataFromEvents(events),
+        ...this._service.voteService._getTransactionDataFromEvents(events),
+      }
+
+      return {
+        blockchain: this._service.name,
+        isPending: false,
+        txId,
+        txIdUrl,
+        block: response.validuntilblock,
+        date: new Date(Number(response.blocktime) * 1000).toJSON(),
+        systemFeeAmount: new BSBigUnitAmount(response.sysfee, this._service.feeToken.decimals).toHuman().toFormatted(),
+        networkFeeAmount: new BSBigUnitAmount(response.netfee, this._service.feeToken.decimals).toHuman().toFormatted(),
+        invocationCount: 0,
+        notificationCount: notifications.length,
+        view: 'default',
+        events,
+        data,
+      }
+    } catch {
+      throw new Error(`Transaction not found: ${hash}`)
+    }
+  }
+
+  async getTransactionsByAddress(
+    _params: TGetTransactionsByAddressParams
+  ): Promise<TGetTransactionsByAddressResponse<TBSAtipicialName, TTransactionDefault<TBSAtipicialName>>> {
+    throw new Error('Method not supported.')
+  }
+
+  async getContract(contractHash: string): Promise<TContractResponse> {
+    try {
+      const { rpc } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+
+      const rpcClient = new rpc.RPCClient(this._service.network.url)
+      const contractState = await rpcClient.getContractState(contractHash)
+
+      const methods = contractState.manifest.abi.methods.map<TContractMethod>(method => ({
+        name: method.name,
+        parameters: method.parameters.map<TContractParameter>(parameter => ({
+          name: parameter.name,
+          type: parameter.type,
+        })),
+      }))
+
+      return {
+        hash: contractState.hash,
+        name: contractState.manifest.name,
+        methods,
+      }
+    } catch {
+      throw new Error(`Contract not found: ${contractHash}`)
+    }
+  }
+
+  async getTokenInfo(tokenHash: string): Promise<TBSToken> {
+    try {
+      const cachedToken = this._tokenCache.get(tokenHash)
+      if (cachedToken) {
+        return cachedToken
+      }
+
+      let token = this._service.tokens.find(token => this._service.tokenService.predicateByHash(tokenHash, token))
+
+      if (!token) {
+        const { rpc, u } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+
+        const rpcClient = new rpc.RPCClient(this._service.network.url)
+        const contractState = await rpcClient.getContractState(tokenHash)
+
+        const { TypeChecker, AtipicialInvoker } = BSAtipicialAtipicialDappKitSingletonHelper.getInstance()
+
+        const invoker = await AtipicialInvoker.init({
+          rpcAddress: this._service.network.url,
+        })
+
+        const response = await invoker.testInvoke({
+          invocations: [
+            {
+              scriptHash: tokenHash,
+              operation: 'decimals',
+              args: [],
+            },
+            { scriptHash: tokenHash, operation: 'symbol', args: [] },
+          ],
+        })
+
+        if (!TypeChecker.isStackTypeInteger(response.stack[0])) throw new Error('Invalid decimals')
+        if (!TypeChecker.isStackTypeByteString(response.stack[1])) throw new Error('Invalid symbol')
+        const decimals = Number(response.stack[0].value)
+        const symbol = u.base642utf8(response.stack[1].value)
+        token = this._service.tokenService.normalizeToken({
+          name: contractState.manifest.name,
+          symbol,
+          hash: contractState.hash,
+          decimals,
+        })
+      }
+
+      this._tokenCache.set(tokenHash, token)
+
+      return token
+    } catch {
+      throw new Error(`Token not found: ${tokenHash}`)
+    }
+  }
+
+  async getBalance(address: string): Promise<TBalanceResponse[]> {
+    const { rpc } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+
+    const rpcClient = new rpc.RPCClient(this._service.network.url)
+    const response = await rpcClient.getAep17Balances(address)
+
+    const promises = response.balance.map<Promise<TBalanceResponse>>(async balance => {
+      let token: TBSToken = {
+        hash: balance.assethash,
+        name: '-',
+        symbol: '-',
+        decimals: 8,
+      }
+      try {
+        token = await this.getTokenInfo(balance.assethash)
+      } catch {
+        // Empty Block
+      }
+
+      return {
+        amount: new BSBigUnitAmount(balance.amount, token.decimals).toHuman().toFormatted(),
+        token,
+      }
+    })
+
+    return await Promise.all(promises)
+  }
+
+  async getBlockHeight(): Promise<number> {
+    const { rpc } = BSAtipicialAtipicialJsSingletonHelper.getInstance()
+    const rpcClient = new rpc.RPCClient(this._service.network.url)
+    return await rpcClient.getBlockCount()
+  }
+}

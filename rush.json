@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.158.1",
+  "pnpmVersion": "10.17.1",
+  "repository": {
+    "url": "https://github.com/Atipicial/blockchain-services",
+    "defaultBranch": "main"
+  },
+  "projects": [
+    {
+      "packageName": "@atipicial/bs-electron",
+      "projectFolder": "packages/bs-electron",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-ethereum",
+      "projectFolder": "packages/bs-ethereum",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-atipicial",
+      "projectFolder": "packages/bs-atipicial",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-atipicial-legacy",
+      "projectFolder": "packages/bs-atipicial-legacy",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/blockchain-service",
+      "projectFolder": "packages/blockchain-service",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-multichain",
+      "projectFolder": "packages/bs-multichain",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-atipicialx",
+      "projectFolder": "packages/bs-atipicialx",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-solana",
+      "projectFolder": "packages/bs-solana",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-stellar",
+      "projectFolder": "packages/bs-stellar",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    },
+    {
+      "packageName": "@atipicial/bs-bitcoin",
+      "projectFolder": "packages/bs-bitcoin",
+      "shouldPublish": true,
+      "versionPolicyName": "lockstep-all"
+    }
+  ]
+}

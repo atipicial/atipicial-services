@@ -1,0 +1,62 @@
+name: Publish all Blockchain Services Libs
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Version bump type'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+
+env:
+  NODE_VERSION: 22.x
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Setup Node Version ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Config Git Properties
+        run: |
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+      - name: Install RushJS
+        run: npm install -g @microsoft/rush
+      - name: Install PNPM
+        run: npm install -g pnpm@latest-10
+      - name: Install Root Dependencies
+        run: pnpm install
+      - name: Install Projects Dependencies
+        run: rush update
+      - name: Lint Projects
+        run: rush lint
+      - name: Build Projects
+        run: rush rebuild
+      - name: Verify Change Logs
+        run: rush change --verify
+      - name: Update package.json version(s)
+        run: rush version --bump --override-bump ${{ github.event.inputs.bump_type }}
+      - name: Publish Projects
+        run: rush publish --apply --publish --npm-auth-token ${{ secrets.NPM_TOKEN }} --add-commit-details --include-all
+      - name: Commit and Push package.json version update
+        run: |
+          git add .
+          git commit -m "Update package.json version(s)"
+          git push --no-verify

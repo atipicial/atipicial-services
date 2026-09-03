@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@atipicial/bs-atipicialx",
+      "comment": "Update stage API domain",
+      "type": "none"
+    }
+  ],
+  "packageName": "@atipicial/bs-atipicialx"
+}

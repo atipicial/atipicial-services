@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "ES2020",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vitest/globals", "node"]
+  }
+}

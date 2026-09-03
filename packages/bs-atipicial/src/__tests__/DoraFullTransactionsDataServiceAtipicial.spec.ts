@@ -1,0 +1,418 @@
+import {
+  BSUtilsHelper,
+  TBSNetwork,
+  type TGetFullTransactionsByAddressParams,
+  type TTransactionDefaultNftEvent,
+} from '@atipicial/blockchain-service'
+import { isLeapYear } from 'date-fns'
+import { BSAtipicial } from '../BSAtipicial'
+import { DoraFullTransactionsDataServiceAtipicial } from '../services/full-transactions-data/DoraFullTransactionsDataServiceAtipicial'
+import { BSAtipicialConstants } from '../constants/BSAtipicialConstants'
+import type { TBSAtipicialNetworkId } from '../types'
+
+const invalidNetwork: TBSNetwork<TBSAtipicialNetworkId> = {
+  id: 'other-network',
+  name: 'Other network',
+  url: 'https://other-network.com',
+  type: 'custom',
+}
+
+const address = 'NYnfAZTcVfSfNgk4RnP2DBNgosq2tUN3U2'
+
+let dateFrom: Date
+let dateTo: Date
+let params: TGetFullTransactionsByAddressParams
+let service: BSAtipicial
+let doraFullTransactionsDataServiceAtipicial: DoraFullTransactionsDataServiceAtipicial
+
+vi.mock('../services/nft-data/GhostMarketNDSAtipicial', () => {
+  const GhostMarketNDSAtipicial = vi.fn()
+
+  GhostMarketNDSAtipicial.prototype.getNft = vi.fn().mockResolvedValue({
+    name: 'nftName',
+    image: 'nftImage',
+    explorerUri: 'nftUrl',
+    collection: { name: 'nftCollectionName', hash: 'nftCollectionHash', url: 'nftCollectionUrl' },
+  })
+
+  return { GhostMarketNDSAtipicial }
+})
+
+describe('DoraFullTransactionsDataServiceAtipicial', () => {
+  beforeEach(async () => {
+    dateFrom = new Date()
+    dateTo = new Date()
+
+    dateFrom.setFullYear(dateFrom.getFullYear() - 1)
+
+    if (isLeapYear(dateFrom)) dateFrom.setDate(dateFrom.getDate() + 1)
+
+    params = { address, dateTo: dateTo.toJSON(), dateFrom: dateFrom.toJSON() }
+
+    service = new BSAtipicial(BSAtipicialConstants.MAINNET_NETWORK)
+    doraFullTransactionsDataServiceAtipicial = new DoraFullTransactionsDataServiceAtipicial(service)
+
+    await BSUtilsHelper.wait(1000)
+  })
+
+  describe('getFullTransactionsByAddress', () => {
+    it("Shouldn't be able to get transactions when is using a different network (Custom) from Mainnet and Testnet", async () => {
+      service = new BSAtipicial(invalidNetwork)
+      doraFullTransactionsDataServiceAtipicial = new DoraFullTransactionsDataServiceAtipicial(service)
+
+      await expect(doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(params)).rejects.toThrow(
+        'Network not supported'
+      )
+    })
+
+    it("Shouldn't be able to get transactions when missing one of the dates", async () => {
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, dateFrom: '' })
+      ).rejects.toThrow('Missing dateFrom param')
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, dateTo: '' })
+      ).rejects.toThrow('Missing dateTo param')
+    })
+
+    it("Shouldn't be able to get transactions when one of the dates is invalid", async () => {
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, dateFrom: 'invalid' })
+      ).rejects.toThrow('Invalid dateFrom param')
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, dateTo: 'invalid' })
+      ).rejects.toThrow('Invalid dateTo param')
+    })
+
+    it("Shouldn't be able to get transactions when dateFrom is greater than dateTo", async () => {
+      dateFrom = new Date()
+      dateTo = new Date()
+
+      dateTo.setDate(dateTo.getDate() - 1)
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+          ...params,
+          dateFrom: dateFrom.toJSON(),
+          dateTo: dateTo.toJSON(),
+        })
+      ).rejects.toThrow('Invalid date order because dateFrom is greater than dateTo')
+    })
+
+    it("Shouldn't be able to get full transactions when address is wrong", async () => {
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, address: 'invalid' })
+      ).rejects.toThrow('Invalid address param')
+    })
+
+    it("Shouldn't be able to get transactions when the range dates are greater than one year", async () => {
+      dateFrom.setDate(dateFrom.getDate() - 1)
+      dateFrom.setSeconds(dateFrom.getSeconds() - 1)
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, dateFrom: dateFrom.toJSON() })
+      ).rejects.toThrow('Date range greater than one year')
+    })
+
+    it("Shouldn't be able to get transactions when the range dates are in future", async () => {
+      dateFrom = new Date()
+      dateTo = new Date()
+
+      dateFrom.setDate(dateFrom.getDate() + 1)
+      dateTo.setDate(dateTo.getDate() + 2)
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+          ...params,
+          dateFrom: dateFrom.toJSON(),
+          dateTo: new Date().toJSON(),
+        })
+      ).rejects.toThrow('The dateFrom and/or dateTo are in future')
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+          ...params,
+          dateFrom: new Date().toJSON(),
+          dateTo: dateTo.toJSON(),
+        })
+      ).rejects.toThrow('The dateFrom and/or dateTo are in future')
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+          ...params,
+          dateFrom: dateFrom.toJSON(),
+          dateTo: dateTo.toJSON(),
+        })
+      ).rejects.toThrow('The dateFrom and/or dateTo are in future')
+    })
+
+    it("Shouldn't be able to get transactions when pageSize param was invalid", async () => {
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, pageSize: 0 })
+      ).rejects.toThrow('Page size should be between 1 and 500')
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, pageSize: 501 })
+      ).rejects.toThrow('Page size should be between 1 and 500')
+
+      await expect(
+        doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({ ...params, pageSize: NaN })
+      ).rejects.toThrow('Page size should be between 1 and 500')
+    })
+
+    it('Should be able to get transactions when is using a Testnet network', async () => {
+      service = new BSAtipicial(BSAtipicialConstants.TESTNET_NETWORK)
+      doraFullTransactionsDataServiceAtipicial = new DoraFullTransactionsDataServiceAtipicial(service)
+      const newAddress = 'NPpopZhoNx5AompcETfMGMtULCPyH6j93H'
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+        ...params,
+        dateFrom: new Date('2025-02-24T20:00:00').toJSON(),
+        dateTo: new Date('2025-02-25T12:00:00').toJSON(),
+        address: newAddress,
+      })
+
+      expect(response).toEqual({
+        nextPageParams: expect.anything(),
+        transactions: expect.arrayContaining([
+          expect.objectContaining({
+            txId: expect.any(String),
+            txIdUrl: expect.any(String),
+            block: expect.any(Number),
+            date: expect.any(String),
+            invocationCount: expect.any(Number),
+            notificationCount: expect.any(Number),
+            blockchain: 'atipicial',
+            isPending: false,
+            relatedAddress: newAddress,
+            networkFeeAmount: expect.stringMatching(/^\d+(\.\d+)?$/),
+            systemFeeAmount: expect.stringMatching(/^\d+(\.\d+)?$/),
+            view: 'default',
+            events: expect.arrayContaining([
+              expect.objectContaining({
+                eventType: expect.any(String),
+                amount: expect.stringMatching(/^\d+(\.\d+)?$/),
+                methodName: expect.any(String),
+              }),
+            ]),
+          }),
+        ]),
+      })
+    })
+
+    it('Should be able to get transactions when is using a Mainnet network', async () => {
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+        ...params,
+        dateFrom: new Date('2024-03-25T12:00:00').toJSON(),
+        dateTo: new Date('2025-02-25T12:00:00').toJSON(),
+      })
+
+      expect(response).toEqual({
+        nextPageParams: expect.anything(),
+        transactions: expect.arrayContaining([
+          expect.objectContaining({
+            txId: expect.any(String),
+            txIdUrl: expect.any(String),
+            block: expect.any(Number),
+            date: expect.any(String),
+            invocationCount: expect.any(Number),
+            notificationCount: expect.any(Number),
+            blockchain: 'atipicial',
+            isPending: false,
+            relatedAddress: address,
+            networkFeeAmount: expect.stringMatching(/^\d+(\.\d+)?$/),
+            systemFeeAmount: expect.stringMatching(/^\d+(\.\d+)?$/),
+            view: 'default',
+            events: expect.arrayContaining([
+              expect.objectContaining({
+                eventType: expect.any(String),
+                amount: expect.stringMatching(/^\d+(\.\d+)?$/),
+                methodName: expect.any(String),
+                from: expect.anything(),
+                fromUrl: expect.anything(),
+                to: expect.anything(),
+                toUrl: expect.anything(),
+                tokenUrl: expect.any(String),
+                token: expect.objectContaining({
+                  decimals: expect.any(Number),
+                  symbol: expect.any(String),
+                  name: expect.any(String),
+                  hash: expect.any(String),
+                }),
+              }),
+            ]),
+          }),
+        ]),
+      })
+    })
+
+    it('Should be able to get transactions when send the nextPageParams param', async () => {
+      const newParams = {
+        ...params,
+        dateFrom: new Date('2024-04-22T03:00:00').toJSON(),
+        dateTo: new Date('2025-03-22T03:00:00').toJSON(),
+        address: 'Nc18TvxNomHdbizZxcW5znbYWsDSr4C2XR',
+      }
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(newParams)
+
+      const nextResponse = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+        ...newParams,
+        nextPageParams: response.nextPageParams,
+      })
+
+      expect(response.nextPageParams).toBeTruthy()
+      expect(response.transactions.length).toBeTruthy()
+      expect(nextResponse.transactions.length).toBeTruthy()
+    })
+
+    it('Should be able to get transactions with NFTs when it was called', async () => {
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress({
+        ...params,
+        dateFrom: new Date('2024-04-22T03:00:00').toJSON(),
+        dateTo: new Date('2025-03-22T03:00:00').toJSON(),
+        address: 'Nc18TvxNomHdbizZxcW5znbYWsDSr4C2XR',
+        nextPageParams: 'NTcyNTEwOA==',
+      })
+
+      const nftEvents = response.transactions
+        .flatMap(({ events }) => events)
+        .filter(({ eventType }) => eventType === 'nft') as TTransactionDefaultNftEvent[]
+
+      expect(nftEvents).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            eventType: 'nft',
+            methodName: expect.any(String),
+            amount: '1',
+            from: expect.anything(),
+            fromUrl: expect.anything(),
+            to: expect.anything(),
+            toUrl: expect.anything(),
+            nft: expect.anything(),
+          }),
+        ])
+      )
+    })
+
+    it('Should be able to get transactions with default pageSize param', async () => {
+      const newParams = {
+        ...params,
+        dateFrom: new Date('2024-08-20T12:00:00').toJSON(),
+        dateTo: new Date('2025-05-20T12:00:00').toJSON(),
+        address: 'NeM8SHQsDCX54A12xa3ZbvWb4a7xiwYtdJ',
+      }
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(newParams)
+
+      expect(response.nextPageParams).toBeTruthy()
+      expect(response.transactions.length).toBe(50)
+    })
+
+    it('Should be able to get transactions that are marked as bridge (GAS)', async () => {
+      const newParams = {
+        ...params,
+        dateFrom: new Date('2025-08-27T10:00:00').toJSON(),
+        dateTo: new Date('2025-08-28T10:00:00').toJSON(),
+        address: 'NXLMomSgyNeZRkeoxyPVJWjSfPb7xeiUJD',
+      }
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(newParams)
+
+      const transaction = response.transactions.find(
+        ({ txId }) => txId === '0x69016c9f2a980b7e71da89e9f18cf46f5e89fe03aaf35d72f7ca5f6bf24b3b55'
+      )
+
+      expect(transaction).toEqual(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            atipicialAtipicialxBridge: {
+              amount: '1',
+              tokenToUse: service.atipicialAtipicialXBridgeService.gasToken,
+              receiverAddress: '0xa911a7fa0901cfc3f1da55a05593823e32e2f1a9',
+            },
+          }),
+        })
+      )
+    })
+
+    it('Should be able to get transactions that are marked as bridge (ATC)', async () => {
+      const newParams = {
+        ...params,
+        dateFrom: new Date('2025-08-12T06:00:00').toJSON(),
+        dateTo: new Date('2025-08-14T20:00:00').toJSON(),
+        address: 'NcTRyXXr2viSowk913dMTvws6sDNbmt8tj',
+      }
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(newParams)
+
+      const transaction = response.transactions.find(
+        ({ txId }) => txId === '0x979b90734ca49ea989e3515de2028196e42762f96f3fa56db24d1c47521075dd'
+      )
+
+      expect(transaction).toEqual(
+        expect.objectContaining({
+          data: {
+            atipicialAtipicialxBridge: {
+              amount: '1',
+              tokenToUse: service.atipicialAtipicialXBridgeService.atipicialToken,
+              receiverAddress: '0xe94bea1d8bb8bcc13cd6974e6941f4d1896d56da',
+            },
+          },
+        })
+      )
+    })
+
+    it('Should be able to get transactions that are marked as bridge (NDMEME)', async () => {
+      const newParams = {
+        ...params,
+        dateFrom: new Date('2026-01-14T00:00:00').toJSON(),
+        dateTo: new Date('2026-01-15T00:00:00').toJSON(),
+        address: 'NTEm8twLpdv1Hpmvy43FwtTNtzsSdc54UR',
+      }
+
+      const response = await doraFullTransactionsDataServiceAtipicial.getFullTransactionsByAddress(newParams)
+
+      const transaction = response.transactions.find(
+        ({ txId }) => txId === '0xa78145db038a1b5702c8f76a3dbe52228573e7cb57d9a03e1a719270fc2bd22c'
+      )
+
+      expect(transaction).toEqual(
+        expect.objectContaining({
+          data: {
+            atipicialAtipicialxBridge: {
+              amount: '49999.37665',
+              tokenToUse: service.atipicialAtipicialXBridgeService.ndmemeToken,
+              receiverAddress: '0xb97c4a0b56a60555ecc546ab438e1f0a0524b04a',
+            },
+          },
+        })
+      )
+    })
+  })
+
+  describe('exportFullTransactionsByAddress', () => {
+    it('Should be able to export transactions when is using a Testnet network', async () => {
+      service = new BSAtipicial(BSAtipicialConstants.TESTNET_NETWORK)
+      doraFullTransactionsDataServiceAtipicial = new DoraFullTransactionsDataServiceAtipicial(service)
+
+      const response = await doraFullTransactionsDataServiceAtipicial.exportFullTransactionsByAddress({
+        dateFrom: new Date('2025-02-24T20:00:00').toJSON(),
+        dateTo: new Date('2025-02-25T12:00:00').toJSON(),
+        address: 'NPpopZhoNx5AompcETfMGMtULCPyH6j93H',
+      })
+
+      expect(response.length).toBeGreaterThan(0)
+    })
+
+    it('Should be able to export transactions when is using a Mainnet network', async () => {
+      const response = await doraFullTransactionsDataServiceAtipicial.exportFullTransactionsByAddress({
+        address: params.address,
+        dateFrom: new Date('2024-03-25T12:00:00').toJSON(),
+        dateTo: new Date('2025-02-25T12:00:00').toJSON(),
+      })
+
+      expect(response.length).toBeGreaterThan(0)
+    })
+  })
+})

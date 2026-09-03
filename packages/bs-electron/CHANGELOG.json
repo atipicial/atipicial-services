@@ -1,0 +1,1035 @@
+{
+  "name": "@atipicial/bs-electron",
+  "entries": [
+    {
+      "version": "3.1.19",
+      "tag": "@atipicial/bs-electron_v3.1.19",
+      "date": "Fri, 10 Jul 2026 20:46:50 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.18",
+      "tag": "@atipicial/bs-electron_v3.1.18",
+      "date": "Wed, 17 Jun 2026 19:38:28 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Update libraries"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.17",
+      "tag": "@atipicial/bs-electron_v3.1.17",
+      "date": "Wed, 17 Jun 2026 19:15:32 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.16",
+      "tag": "@atipicial/bs-electron_v3.1.16",
+      "date": "Mon, 01 Jun 2026 21:07:39 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.15",
+      "tag": "@atipicial/bs-electron_v3.1.15",
+      "date": "Fri, 08 May 2026 20:39:57 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.14",
+      "tag": "@atipicial/bs-electron_v3.1.14",
+      "date": "Tue, 28 Apr 2026 18:29:40 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.13",
+      "tag": "@atipicial/bs-electron_v3.1.13",
+      "date": "Mon, 27 Apr 2026 20:18:15 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Add CLAUDE.md"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.12",
+      "tag": "@atipicial/bs-electron_v3.1.12",
+      "date": "Tue, 21 Apr 2026 16:34:29 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.11",
+      "tag": "@atipicial/bs-electron_v3.1.11",
+      "date": "Fri, 17 Apr 2026 00:42:16 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.10",
+      "tag": "@atipicial/bs-electron_v3.1.10",
+      "date": "Wed, 15 Apr 2026 19:43:40 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.9",
+      "tag": "@atipicial/bs-electron_v3.1.9",
+      "date": "Thu, 09 Apr 2026 18:51:16 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.8",
+      "tag": "@atipicial/bs-electron_v3.1.8",
+      "date": "Wed, 08 Apr 2026 19:25:42 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.7",
+      "tag": "@atipicial/bs-electron_v3.1.7",
+      "date": "Wed, 08 Apr 2026 13:56:56 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.6",
+      "tag": "@atipicial/bs-electron_v3.1.6",
+      "date": "Wed, 01 Apr 2026 15:09:44 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.5",
+      "tag": "@atipicial/bs-electron_v3.1.5",
+      "date": "Tue, 31 Mar 2026 18:49:48 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.4",
+      "tag": "@atipicial/bs-electron_v3.1.4",
+      "date": "Thu, 26 Mar 2026 19:08:54 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Improve service name typings"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.1.3",
+      "tag": "@atipicial/bs-electron_v3.1.3",
+      "date": "Mon, 23 Mar 2026 16:17:33 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.2",
+      "tag": "@atipicial/bs-electron_v3.1.2",
+      "date": "Mon, 23 Mar 2026 12:43:32 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.1",
+      "tag": "@atipicial/bs-electron_v3.1.1",
+      "date": "Fri, 20 Mar 2026 19:51:05 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.1.0",
+      "tag": "@atipicial/bs-electron_v3.1.0",
+      "date": "Thu, 19 Mar 2026 16:35:03 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Update libraries"
+          },
+          {
+            "comment": "Update Electron version"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.6",
+      "tag": "@atipicial/bs-electron_v3.0.6",
+      "date": "Mon, 02 Mar 2026 14:32:56 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.5",
+      "tag": "@atipicial/bs-electron_v3.0.5",
+      "date": "Sat, 21 Feb 2026 18:56:12 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Replace jest to vitest"
+          }
+        ]
+      }
+    },
+    {
+      "version": "3.0.4",
+      "tag": "@atipicial/bs-electron_v3.0.4",
+      "date": "Fri, 13 Feb 2026 22:47:31 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.3",
+      "tag": "@atipicial/bs-electron_v3.0.3",
+      "date": "Wed, 11 Feb 2026 21:38:14 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.2",
+      "tag": "@atipicial/bs-electron_v3.0.2",
+      "date": "Tue, 10 Feb 2026 14:48:23 GMT",
+      "comments": {}
+    },
+    {
+      "version": "3.0.1",
+      "tag": "@atipicial/bs-electron_v3.0.1",
+      "date": "Fri, 06 Feb 2026 15:34:13 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "New version policy to align with other blockchain packages."
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.2.0",
+      "tag": "@atipicial/bs-electron_v0.2.0",
+      "date": "Thu, 29 Jan 2026 15:41:42 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Adapt to new interfaces"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.24.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.65",
+      "tag": "@atipicial/bs-electron_v0.1.65",
+      "date": "Tue, 27 Jan 2026 18:42:09 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.23.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.64",
+      "tag": "@atipicial/bs-electron_v0.1.64",
+      "date": "Fri, 09 Jan 2026 18:51:04 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.8`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.63",
+      "tag": "@atipicial/bs-electron_v0.1.63",
+      "date": "Fri, 02 Jan 2026 18:27:28 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.7`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.62",
+      "tag": "@atipicial/bs-electron_v0.1.62",
+      "date": "Fri, 26 Dec 2025 16:54:17 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.6`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.61",
+      "tag": "@atipicial/bs-electron_v0.1.61",
+      "date": "Fri, 28 Nov 2025 14:03:41 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.5`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.60",
+      "tag": "@atipicial/bs-electron_v0.1.60",
+      "date": "Mon, 17 Nov 2025 15:12:54 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.4`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.59",
+      "tag": "@atipicial/bs-electron_v0.1.59",
+      "date": "Fri, 14 Nov 2025 21:17:37 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Improve error handling"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.58",
+      "tag": "@atipicial/bs-electron_v0.1.58",
+      "date": "Thu, 06 Nov 2025 11:54:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Prevent exposure of individual properties for data-only objects"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.57",
+      "tag": "@atipicial/bs-electron_v0.1.57",
+      "date": "Mon, 27 Oct 2025 14:12:54 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.56",
+      "tag": "@atipicial/bs-electron_v0.1.56",
+      "date": "Fri, 24 Oct 2025 22:41:54 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.55",
+      "tag": "@atipicial/bs-electron_v0.1.55",
+      "date": "Thu, 23 Oct 2025 16:39:44 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Prevent protected/private property from being exposed"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.54",
+      "tag": "@atipicial/bs-electron_v0.1.54",
+      "date": "Fri, 10 Oct 2025 12:24:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.53",
+      "tag": "@atipicial/bs-electron_v0.1.53",
+      "date": "Fri, 10 Oct 2025 01:36:19 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "General improvements"
+          },
+          {
+            "comment": "Bump dependencies version"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.22.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.52",
+      "tag": "@atipicial/bs-electron_v0.1.52",
+      "date": "Wed, 01 Oct 2025 23:44:28 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.21.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.51",
+      "tag": "@atipicial/bs-electron_v0.1.51",
+      "date": "Tue, 09 Sep 2025 18:08:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Transform parameters to plain object to avoid it be empty when it uses getters"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.50",
+      "tag": "@atipicial/bs-electron_v0.1.50",
+      "date": "Mon, 08 Sep 2025 19:38:54 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.21.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.49",
+      "tag": "@atipicial/bs-electron_v0.1.49",
+      "date": "Tue, 02 Sep 2025 22:47:47 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.21.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.48",
+      "tag": "@atipicial/bs-electron_v0.1.48",
+      "date": "Mon, 01 Sep 2025 18:24:15 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.20.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.47",
+      "tag": "@atipicial/bs-electron_v0.1.47",
+      "date": "Tue, 19 Aug 2025 15:03:33 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.19.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.46",
+      "tag": "@atipicial/bs-electron_v0.1.46",
+      "date": "Tue, 12 Aug 2025 18:55:01 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.19.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.45",
+      "tag": "@atipicial/bs-electron_v0.1.45",
+      "date": "Tue, 24 Jun 2025 16:33:10 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.19.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.44",
+      "tag": "@atipicial/bs-electron_v0.1.44",
+      "date": "Tue, 10 Jun 2025 20:47:03 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.19.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.43",
+      "tag": "@atipicial/bs-electron_v0.1.43",
+      "date": "Sat, 31 May 2025 13:37:40 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.18.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.42",
+      "tag": "@atipicial/bs-electron_v0.1.42",
+      "date": "Thu, 29 May 2025 19:24:38 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.18.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.41",
+      "tag": "@atipicial/bs-electron_v0.1.41",
+      "date": "Thu, 22 May 2025 23:10:38 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.18.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.40",
+      "tag": "@atipicial/bs-electron_v0.1.40",
+      "date": "Tue, 06 May 2025 15:11:09 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.17.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.39",
+      "tag": "@atipicial/bs-electron_v0.1.39",
+      "date": "Tue, 29 Apr 2025 20:48:08 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.17.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.38",
+      "tag": "@atipicial/bs-electron_v0.1.38",
+      "date": "Wed, 16 Apr 2025 20:44:43 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update license"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.16.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.37",
+      "tag": "@atipicial/bs-electron_v0.1.37",
+      "date": "Fri, 28 Mar 2025 21:07:26 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.16.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.36",
+      "tag": "@atipicial/bs-electron_v0.1.36",
+      "date": "Wed, 26 Mar 2025 18:20:32 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.16.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.35",
+      "tag": "@atipicial/bs-electron_v0.1.35",
+      "date": "Fri, 14 Mar 2025 20:31:57 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.16.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.34",
+      "tag": "@atipicial/bs-electron_v0.1.34",
+      "date": "Tue, 11 Mar 2025 18:24:06 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.15.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.33",
+      "tag": "@atipicial/bs-electron_v0.1.33",
+      "date": "Fri, 07 Mar 2025 18:13:11 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.15.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.32",
+      "tag": "@atipicial/bs-electron_v0.1.32",
+      "date": "Tue, 25 Feb 2025 17:58:55 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.15.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.31",
+      "tag": "@atipicial/bs-electron_v0.1.31",
+      "date": "Mon, 24 Feb 2025 21:18:54 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.15.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.30",
+      "tag": "@atipicial/bs-electron_v0.1.30",
+      "date": "Mon, 13 Jan 2025 20:30:41 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.14.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.29",
+      "tag": "@atipicial/bs-electron_v0.1.29",
+      "date": "Thu, 09 Jan 2025 13:28:41 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.13.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.28",
+      "tag": "@atipicial/bs-electron_v0.1.28",
+      "date": "Tue, 07 Jan 2025 14:34:40 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.13.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.27",
+      "tag": "@atipicial/bs-electron_v0.1.27",
+      "date": "Mon, 06 Jan 2025 15:08:15 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.13.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.26",
+      "tag": "@atipicial/bs-electron_v0.1.26",
+      "date": "Wed, 18 Dec 2024 11:11:37 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.13.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.25",
+      "tag": "@atipicial/bs-electron_v0.1.25",
+      "date": "Mon, 16 Dec 2024 19:45:17 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.12.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.24",
+      "tag": "@atipicial/bs-electron_v0.1.24",
+      "date": "Sat, 14 Dec 2024 02:14:48 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.11.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.23",
+      "tag": "@atipicial/bs-electron_v0.1.23",
+      "date": "Fri, 13 Dec 2024 17:18:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.10.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.22",
+      "tag": "@atipicial/bs-electron_v0.1.22",
+      "date": "Tue, 19 Nov 2024 20:13:09 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.10.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.21",
+      "tag": "@atipicial/bs-electron_v0.1.21",
+      "date": "Mon, 11 Nov 2024 22:23:41 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.10.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.20",
+      "tag": "@atipicial/bs-electron_v0.1.20",
+      "date": "Thu, 07 Nov 2024 20:52:20 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.9.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.19",
+      "tag": "@atipicial/bs-electron_v0.1.19",
+      "date": "Mon, 04 Nov 2024 22:49:56 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.8.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.18",
+      "tag": "@atipicial/bs-electron_v0.1.18",
+      "date": "Fri, 11 Oct 2024 19:26:03 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.7.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.17",
+      "tag": "@atipicial/bs-electron_v0.1.17",
+      "date": "Tue, 01 Oct 2024 20:21:36 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.6.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.16",
+      "tag": "@atipicial/bs-electron_v0.1.16",
+      "date": "Tue, 01 Oct 2024 16:41:24 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.5.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.15",
+      "tag": "@atipicial/bs-electron_v0.1.15",
+      "date": "Mon, 09 Sep 2024 15:52:55 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.4.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.14",
+      "tag": "@atipicial/bs-electron_v0.1.14",
+      "date": "Wed, 21 Aug 2024 16:07:49 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.3.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.13",
+      "tag": "@atipicial/bs-electron_v0.1.13",
+      "date": "Tue, 20 Aug 2024 20:50:53 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.3.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.12",
+      "tag": "@atipicial/bs-electron_v0.1.12",
+      "date": "Tue, 20 Aug 2024 17:24:34 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.3.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.11",
+      "tag": "@atipicial/bs-electron_v0.1.11",
+      "date": "Fri, 02 Aug 2024 15:38:35 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.2.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.10",
+      "tag": "@atipicial/bs-electron_v0.1.10",
+      "date": "Tue, 23 Jul 2024 21:44:02 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.1.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.9",
+      "tag": "@atipicial/bs-electron_v0.1.9",
+      "date": "Wed, 17 Jul 2024 16:13:43 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.0.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.8",
+      "tag": "@atipicial/bs-electron_v0.1.8",
+      "date": "Mon, 15 Jul 2024 18:05:28 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.0.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.7",
+      "tag": "@atipicial/bs-electron_v0.1.7",
+      "date": "Fri, 12 Jul 2024 00:06:10 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `1.0.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.6",
+      "tag": "@atipicial/bs-electron_v0.1.6",
+      "date": "Thu, 27 Jun 2024 21:15:08 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `0.13.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.5",
+      "tag": "@atipicial/bs-electron_v0.1.5",
+      "date": "Wed, 19 Jun 2024 15:40:02 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `0.12.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.4",
+      "tag": "@atipicial/bs-electron_v0.1.4",
+      "date": "Tue, 11 Jun 2024 19:22:55 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `0.11.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.3",
+      "tag": "@atipicial/bs-electron_v0.1.3",
+      "date": "Thu, 06 Jun 2024 14:55:18 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `0.11.1`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.2",
+      "tag": "@atipicial/bs-electron_v0.1.2",
+      "date": "Mon, 22 Apr 2024 18:15:20 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix number of param that we pass to the function when trying to figure out if it returns a promise"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.1",
+      "tag": "@atipicial/bs-electron_v0.1.1",
+      "date": "Mon, 15 Apr 2024 22:37:36 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix build folder"
+          },
+          {
+            "comment": "Fix build script "
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.0",
+      "tag": "@atipicial/bs-electron_v0.1.0",
+      "date": "Mon, 15 Apr 2024 20:14:54 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Project bootstrap "
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Fix build script in windows"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@atipicial/blockchain-service\" to `0.11.0`"
+          }
+        ]
+      }
+    }
+  ]
+}

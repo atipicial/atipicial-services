@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
+  "commands": [
+    {
+      "name": "format",
+      "commandKind": "bulk",
+      "summary": "Exec all packages format command",
+      "safeForSimultaatipicialusRushProcesses": true,
+      "enableParallelism": false,
+      "shellCommand": "npm run format"
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Exec all packages lint command",
+      "safeForSimultaatipicialusRushProcesses": true,
+      "enableParallelism": false,
+      "shellCommand": "npm run lint"
+    },
+    {
+      "name": "package",
+      "commandKind": "bulk",
+      "summary": "Exec all packages package command",
+      "safeForSimultaatipicialusRushProcesses": true,
+      "enableParallelism": false,
+      "shellCommand": "npm run package"
+    },
+    {
+      "commandKind": "bulk",
+      "name": "test",
+      "summary": "Exec all packages tests",
+      "enableParallelism": false,
+      "ignoreMissingScript": true,
+      "safeForSimultaatipicialusRushProcesses": true
+    },
+    {
+      "commandKind": "bulk",
+      "name": "typecheck",
+      "summary": "Exec all packages typecheck",
+      "enableParallelism": false,
+      "ignoreMissingScript": true,
+      "safeForSimultaatipicialusRushProcesses": true
+    }
+  ]
+}
